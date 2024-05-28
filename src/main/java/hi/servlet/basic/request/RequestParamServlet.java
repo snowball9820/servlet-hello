@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 /*
  1.파라미터 전송 기능
@@ -27,6 +26,14 @@ public class RequestParamServlet extends HttpServlet {
                         "=" + request.getParameter(paramName)));
         System.out.println("[전체 파라미터 조회] - end");
         System.out.println();
+
+        //단일 파라미터 조회
+        System.out.println("[단일 파라미터 조회]");
+        String username = request.getParameter("username");
+        String age = request.getParameter("age");
+
+        System.out.println("username = " + username);
+        System.out.println("age = " + age);
 
     }
 }
